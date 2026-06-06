@@ -1,45 +1,82 @@
-# OfficePal
+## 2025 - Summer Intern 
+# OfficePal - Task Management System
 
-## Proje Tanımı
+## 📖 Project Overview
+OfficePal is a secure task management system developed as an internship project at Interprobe[cite: 2]. It allows internal teams to regularly track their projects and tasks within a secure system, making workplaces more efficient and effective[cite: 2]. The system provides ease of use and flexibility by enabling users to create projects, assign tasks, and manage their statuses[cite: 2]. 
 
-Kurum içi ekiplerin görevlerini ve projelerini düzenli şekilde takip edebilmesi için geliştirilecek. Sistem, kullanıcıların proje oluşturmasına, görev tanımlamasına, görev durumlarını güncellemesine ve görevlere yorum eklemesine olanak tanıyacaktır.
+---
 
-Amaç kullanıcıların, projeler oluşturabilmesi, projelere açıklama girilmesi, her projeye görev tanımlayabilmesi, bu görevlerin durumlarını adım adım güncelleyebilmesi, görevlere açıklama tanımlayabilmesi ve görevler üzerinden ekip arkadaşlarıyla yazılı iletişim (yorum) kurabilmesidir.
+## 🚀 Features
 
-Ekiplerin iş takibini yapabileceği, sade ve güvenli bir görev yönetim sistemi inşa edilecektir.
+### 1. Project Management
+* Users can create new projects to organize team workflows.
+* The system ensures that each user can only view their own projects[cite: 2].
 
-Kullanıcı sisteme giriş yaptıktan sonra aşağıdaki işlemleri yapabilir:
+### 2. Task Management
+* Users can create tasks within projects and assign them to users[cite: 2].
+* Users can update their task status in three different ways: TODO, IN_PROGRESS, and COMPLETED[cite: 2].
 
-1. **Proje Yönetimi:** Yeni projeler oluşturabilir. Yalnızca kendi oluşturduğu projeleri görebilir.
-2. **Görev Yönetimi:** Projelerine görevler tanımlayabilir. Görevleri başka kullanıcılara atayabilir. Kendi veya atandığı görevlerin durumlarını güncelleyebilir. Görevlerin durumu 3 farklı durumu olacak: TODO, IN_PROGRESS, COMPLETED.
-3. **Yorum Sistemi:** Görevlere yorum ekleyebilir. Sadece kendi yazdığı yorumları düzenleyebilir veya silebilir.
-4. **Kimlik Doğrulama:** Sisteme kayıt olabilir. Güvenli giriş yaptıktan sonra sisteme erişebilir.
+### 3. Comment System
+* Users can leave comments on assigned tasks through the comment system to facilitate team communication[cite: 2].
+* Users can only edit or delete their own comments[cite: 2].
 
-### Yetkilendirme Kuralları
-- **Projeler:** Her kullanıcı yalnızca kendi projelerini görür.
-- **Görevler:** Kullanıcı, sadece kendi projelerine görev ekleyebilir. Bir görev kendisine atandıysa, o görevi görebilir ve durumunu değiştirebilir.
-- **Yorumlar:** Kullanıcı sadece kendi yazdığı yorumları silebilir. Yorumlar, görevin görünür olduğu kullanıcılar tarafından görülebilir.
+### 4. Authentication & Security
+* The system implements JWT-based authorization and authentication to ensure system security[cite: 2].
+* The JWT token system automatically rejects requests that have expired or lack tokens, ensuring that only eligible users can view their projects and tasks[cite: 2].
 
-### Örnek Senaryo
-1. **Proje Oluşturma ve Görev Atama**
-   - Ahmet sisteme giriş yapar ve "Web Sitesi Yenileme" adında bir proje oluşturur.
-   - Bu proje altına iki görev tanımlar.
-     - “Tasarım hazırla” → Ahmet’e atanır
-     - “API bağlantısını yap” → Zeynep’e atanır
-2. **Görev Takibi ve Yorumlar**
-   - Zeynep, kendisine atanan görevi görür ve durumunu “IN_PROGRESS” olarak günceller.
-   - Her iki kullanıcı da görev altında yorum yapar:
-     - Ahmet: "Tasarım Figma’da tamamlandı."
-     - Zeynep: "API uç noktaları test edildi."
-3. **Erişim Kontrolü**
-   - Projeye yalnızca proje sahibi olan Ahmet tam erişim sağlar.
-   - Zeynep ise sadece kendisine atanan görevi ve o göreve ait yorumları görebilir.
+---
 
-### Güvenlik Gereksinimleri
-- **JWT Token Sistemi:** Kullanıcı giriş yaptıktan sonra kendisine bir JWT token verilir. Bu token, tüm korumalı API isteklerinde Authorization: Bearer <token> başlığıyla gönderilmelidir. Token gönderilmeden erişilmek istenen endpoint’ler otomatik olarak 401 Unauthorized hatası döner.
-- **Spring Security Yapılandırması:**
-  - Serbest Erişim: /auth/register, /auth/login
-  - Korumalı Alanlar: Diğer tüm API’ler (proje, görev, yorum gibi)
-  - Geçersiz Token: Hatalı veya süresi dolmuş tokenlar reddedilir.
+## 🛠️ Technology Stack
 
-Bu backend servisiyle birlikte, aynı sistemin React ile geliştirilecek bir frontend uygulaması da planlanmaktadır.
+* **Backend:** REST APIs were created on the backend using Java Spring Boot[cite: 2].
+* **Frontend:** React.js was used for the frontend to create an interface that allows users to easily manage their tasks, projects, and comments[cite: 2].
+* **Database:** Data management was achieved with a PostgreSQL database, creating project, task, comment, and user tables[cite: 2].
+* **Containerization & Deployment:** Docker was used for containerization and deployment during the development process[cite: 2].
+* **Project Tracking:** Jira was used for project planning and task tracking[cite: 2]. Sprint-based progress planning was implemented using the Agile methodology[cite: 2].
+
+---
+
+## 🏗️ System Architecture
+
+The backend utilizes a layered architecture, which is the basic component of the system[cite: 2]. This architecture facilitates scalability and maintenance, making the system more effective and efficient[cite: 2]. 
+
+* **Controller Layer:** Manages API endpoints[cite: 2].
+* **Service Layer:** Manages business logic[cite: 2].
+* **Repository Layer:** Manages database communication[cite: 2].
+* **DTOs (Data Transfer Objects):** Ensure the front end receives only the necessary information[cite: 2].
+
+By using this architecture, code readability and system efficiency have been increased and system security has been fully ensured[cite: 2].
+
+---
+
+## 🔐 Security & Authorization Rules
+
+### Spring Security Configuration
+* **Public Access:** The `/auth/register` and `/auth/login` endpoints are freely accessible for user onboarding.
+* **Protected Areas:** All other API endpoints (projects, tasks, comments) are strictly protected.
+* **Token Implementation:** Upon login, users receive a JWT token. All requests to protected endpoints must include this token in the header as `Authorization: Bearer <token>`. Requests without a token will automatically return a `401 Unauthorized` error.
+
+### Access Control
+* **Projects:** Users have exclusive visibility over the projects they create.
+* **Tasks:** Users can only add tasks to their own projects. Assigned users can view their specific tasks and update the statuses.
+* **Comments:** Comments are visible to any user authorized to view the task, but modification/deletion rights belong solely to the comment author.
+
+---
+
+## 📋 Example Scenario
+
+**1. Project Creation and Task Assignment**
+* **Ahmet** logs into the system and creates a project named *"Web Sitesi Yenileme"*.
+* He defines two tasks under this project:
+  * *"Tasarım hazırla"* → Assigned to **Ahmet**.
+  * *"API bağlantısını yap"* → Assigned to **Zeynep**.
+
+**2. Task Tracking and Collaboration**
+* **Zeynep** logs in, views her assigned task, and updates its status to `IN_PROGRESS`.
+* Both users collaborate via comments under their respective tasks:
+  * **Ahmet:** *"Tasarım Figma’da tamamlandı."*
+  * **Zeynep:** *"API uç noktaları test edildi."*
+
+**3. Strict Access Control**
+* As the project owner, **Ahmet** has full access to the entire project.
+* **Zeynep** can strictly *only* view the task assigned to her and the comments left on that specific task.
