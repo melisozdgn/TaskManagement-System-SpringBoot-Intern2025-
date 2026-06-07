@@ -2,7 +2,7 @@
 # OfficePal - Task Management System
 
 ## 📖 Project Overview
-OfficePal is a secure task management system developed as an internship project at Interprobe. It allows internal teams to regularly track their projects and tasks within a secure system, making workplaces more efficient and effective. The system provides ease of use and flexibility by enabling users to create projects, assign tasks, and manage their statuses. 
+OfficePal is a secure task management system developed as an internship project . It allows internal teams to regularly track their projects and tasks within a secure system, making workplaces more efficient and effective. The system provides ease of use and flexibility by enabling users to create projects, assign tasks, and manage their statuses. 
 
 ---
 
